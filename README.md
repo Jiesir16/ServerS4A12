@@ -1,6 +1,6 @@
 # 86JP Server Emulator
 
-DNF 86JP 服务端模拟器。配合 `86JPDump.exe` 客户端使用。
+DNF 86JP 服务端模拟器。配合 `86JP` 客户端使用,客户端在dc群。
 
 ## 作者与协作
 
