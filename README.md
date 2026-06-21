@@ -2,6 +2,12 @@
 
 DNF 86JP 服务端模拟器。配合 `86JPDump.exe` 客户端使用。
 
+## 作者与协作
+
+署名: 风骑士
+
+目前项目仍处于研究和开源完善阶段，还存在非常多 BUG。欢迎有能力的朋友一起提交 Issue、PR，或加入 Discord 共同完善服务端、客户端适配、封包、数据库和 PVF 相关内容。
+
 ## 社区交流
 
 Discord 社区: https://discord.gg/3wct6SZp
