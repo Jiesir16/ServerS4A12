@@ -12,6 +12,10 @@ DNF 86JP 服务端模拟器。配合 `86JP` 客户端使用,客户端在dc群。
 
 Discord 社区: https://discord.gg/3wct6SZp
 
+## 补丁源码
+
+补丁源码位于 `Patch/` 目录。补丁成品已经生成好，并且已经放在客户端中；普通用户直接使用客户端即可，不需要重新编译补丁。
+
 ## 快速启动
 
 普通用户下载仓库后，直接双击根目录的 `StartServer.exe`。它会启动 `Server/DfoServer/bin/Debug/DfoServer.exe`。
