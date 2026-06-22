@@ -361,7 +361,7 @@ namespace DfoServer.Game.Quests
                     }
 
                     if (!GameWorld.QuestData.IsRepeatableQuest(questId))
-                        MarkQuestCleared(conn, characterId, questId);
+                        MarkQuestCleared(conn, tx, characterId, questId);
                     tx.Commit();
                 }
             }
@@ -404,10 +404,10 @@ namespace DfoServer.Game.Quests
             return w.ToArray();
         }
 
-        private static void MarkQuestCleared(SqliteConnection conn, int characterId, ushort questId)
+        private static void MarkQuestCleared(SqliteConnection conn, SqliteTransaction tx, int characterId, ushort questId)
         {
             using (var cmd = new SqliteCommand(
-                "INSERT OR REPLACE INTO character_invisible_falgs (character_id, slot_index, flag_value) VALUES (@cid, @idx, 1)", conn))
+                "INSERT OR REPLACE INTO character_invisible_falgs (character_id, slot_index, flag_value) VALUES (@cid, @idx, 1)", conn, tx))
             {
                 cmd.Parameters.AddWithValue("@cid", characterId);
                 cmd.Parameters.AddWithValue("@idx", (int)questId);
@@ -416,7 +416,7 @@ namespace DfoServer.Game.Quests
 
             uint requiredLen = (uint)(questId + 1);
             using (var cmd = new SqliteCommand(
-                "UPDATE character_init_flags SET charac_invisible_falgs_payload_len = MAX(charac_invisible_falgs_payload_len, @len) WHERE character_id = @cid", conn))
+                "UPDATE character_init_flags SET charac_invisible_falgs_payload_len = MAX(charac_invisible_falgs_payload_len, @len) WHERE character_id = @cid", conn, tx))
             {
                 cmd.Parameters.AddWithValue("@len", (long)requiredLen);
                 cmd.Parameters.AddWithValue("@cid", characterId);
