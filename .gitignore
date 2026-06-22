@@ -5,11 +5,6 @@
 [Pp]ublish/
 out/
 
-# Self-contained publish / dev logs
-server.log
-packet_log.txt
-*.log
-
 # IDE / editor (may contain absolute paths)
 .vs/
 .vscode/
@@ -30,10 +25,3 @@ artifacts/
 # OS
 .DS_Store
 Thumbs.db
-
-# User-provided game data (large; copy locally per README)
-**/Data/Pvf/Script.pvf
-**/Data/Pvf/*.pvf
-
-# Keep empty Pvf folder marker
-!**/Data/Pvf/README.md
